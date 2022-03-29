@@ -18,6 +18,10 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use('/get-recipes', getRecipesRouter);
 app.use('/create-recipes', createRecipesRouter);
 
+app.get('/', (req, res) => {
+  res.send('<h1>JC | Recipes Server is running!</h1>');
+});
+
 
 const MONGODB_URI = process.env.MONGODB_URI;
 const PORT = process.env.PORT || 5000;
