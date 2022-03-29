@@ -12,12 +12,12 @@ dotenv.config();
 const app = express();
 
 app.use(cors());
+app.use(bodyParser({ limit: '30mb', extended: true }));
+app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 
 app.use('/get-recipes', getRecipesRouter);
 app.use('/create-recipes', createRecipesRouter);
 
-app.use(bodyParser({ limit: '30md', extended: true }));
-app.use(bodyParser.urlencoded({ limit: '30md', extended: true }));
 
 const MONGODB_URI = process.env.MONGODB_URI;
 const PORT = process.env.PORT || 5000;

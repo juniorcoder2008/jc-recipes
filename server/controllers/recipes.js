@@ -13,13 +13,15 @@ export const getRecipes = async (req, res) => {
 export const createRecipe = async (req, res) => {
   const recipe = req.body;
 
+  console.log(recipe);
+
   const newRecipe = new Recipe(recipe);
 
   try {
     await newRecipe.save();
 
-    res.send(201).json(newRecipe)
+    res.json(newRecipe)
   } catch (error) {
-    res.send(409).json({ message: error.message })
+    res.json({ message: error.message });
   }
 }

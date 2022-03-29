@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className='flex items-center gap-3'>
         <JcLogo />
         <div className='h-8 w-1 bg-stone-700'></div>
-        <h1 className='text-3xl uppercase font-black'>Recipes</h1>
+        <h1 className='text-3xl uppercase font-black text-black'>Recipes</h1>
       </div>
     </header>
   )
