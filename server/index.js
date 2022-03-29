@@ -4,17 +4,20 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-import recipesRouter from './routes/recipes.js';
+import getRecipesRouter from './routes/getRecipes.js';
+import createRecipesRouter from './routes/createRecipes.js';
 
 dotenv.config();
 
 const app = express();
 
-app.use('/recipes', recipesRouter)
+app.use(cors());
+
+app.use('/get-recipes', getRecipesRouter);
+app.use('/create-recipes', createRecipesRouter);
 
 app.use(bodyParser({ limit: '30md', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30md', extended: true }));
-app.use(cors());
 
 const MONGODB_URI = process.env.MONGODB_URI;
 const PORT = process.env.PORT || 5000;

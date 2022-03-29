@@ -7,8 +7,7 @@ const recipeSchema = mongoose.Schema({
     name: String,
     amount: Number
   }],
-  creator: String,
-  uuid: String
+  uuid: String,
 });
 
 const Recipe = mongoose.model('RecipeSchema', recipeSchema);
