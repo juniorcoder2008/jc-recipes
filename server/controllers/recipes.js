@@ -25,3 +25,19 @@ export const createRecipe = async (req, res) => {
     res.json({ message: error.message });
   }
 }
+
+export const deleteRecipe = async (req, res) => {
+  try {
+    const id = req.body;
+
+    console.log(id);
+
+    await Recipe.findByIdAndRemove(`${id.id}`, () => {
+      console.log('deleted doc');
+    })
+
+    res.send(`<p>Document with ID ${id} was succesfully deleted!</p>`)
+  } catch (error) {
+    res.json({ errorMessage: error.message })
+  }
+}

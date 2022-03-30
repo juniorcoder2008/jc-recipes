@@ -13,7 +13,7 @@ const Recipes = ({ recipeList, setRecipeList }) => {
 
   return (
     <div className='mt-10'>
-      <h1 className='text-2xl font-bold'>Recipes</h1>
+      <h1 className='text-2xl font-bold'>Rezepte</h1>
 
       <div className='flex flex-col mt-3'>
         {recipeList.map(recipe => {

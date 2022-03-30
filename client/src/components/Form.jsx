@@ -36,7 +36,7 @@ const Form = ({ recipeList, setRecipeList }) => {
 
   return (
     <div className='mt-5'>
-      <h1 className='text-2xl font-bold'>Create new recipe</h1>
+      <h1 className='text-2xl font-bold'>Neues Rezept</h1>
       <form className='flex flex-col gap-3 mt-3' onSubmit={createRecipe}>
         <input type="text" onChange={e => setTitle(e.target.value)} value={title} placeholder='Recipe Name' className='w-4/6 bg-gray-200 px-3 py-2 rounded-lg outline-none focus:text-indigo-500' />
         <input type="text" onChange={e => setDescription(e.target.value)} value={description} placeholder='Recipe Description' className='w-4/6 bg-gray-200 px-3 py-2 rounded-lg outline-none focus:text-indigo-500' />

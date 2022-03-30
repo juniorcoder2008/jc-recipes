@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 
 import getRecipesRouter from './routes/getRecipes.js';
 import createRecipesRouter from './routes/createRecipes.js';
+import deleteRecipesRouter from './routes/deleteRecipes.js';
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 
 app.use('/get-recipes', getRecipesRouter);
 app.use('/create-recipes', createRecipesRouter);
+app.use('/delete-recipes/:id', deleteRecipesRouter);
 
 app.get('/', (req, res) => {
   res.send('<h1>JC | Recipes Server is running!</h1>');
