@@ -18,7 +18,7 @@ const Recipe = ({ data }) => {
   const deleteRecipe = async () => {
     console.log('Delete recipe request was sended successfully!');
     console.log(data._id);
-    await axios.post(`http://localhost:5000/delete-recipes/${data._id}`, { id: data._id }).then(res => {
+    await axios.post(`https://jc-recipes-backend.herokuapp.com/delete-recipes/${data._id}`, { id: data._id }).then(res => {
       console.log(`The recipe ${data.title} was succesfully deleted!`)
       location.reload();
     })

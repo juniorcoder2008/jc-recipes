@@ -14,7 +14,7 @@ const App = () => {
   const [load, setLoad] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/get-recipes').then(data => {
+    axios.get('https://jc-recipes-backend.herokuapp.com/get-recipes').then(data => {
       setRecipeList(data.data);
       setLoad(false);
     }).catch(err => console.log(err.message));

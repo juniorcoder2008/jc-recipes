@@ -6,7 +6,7 @@ import Recipe from './Recipe';
 const Recipes = ({ recipeList, setRecipeList }) => {
 
   useEffect(() => {
-    axios.get('http://localhost:5000/get-recipes').then(data => {
+    axios.get('https://jc-recipes-backend.herokuapp.com/get-recipes').then(data => {
       setRecipeList(data.data);
     }).catch(err => console.log(err.message));
   }, []);
